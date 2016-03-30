@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">xGauge</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">xGauge</string>
+  <string name="AddEventText">Add Event</string>
+  <string name="AddEventCategoryText">Category</string>
+  <string name="AddEventNameText">Event Name</string>
+  <string name="AddEventSaveText">Save</string>
 </resources>

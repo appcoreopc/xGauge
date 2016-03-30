@@ -38,5 +38,12 @@
     <item name="windowNoTitle">true</item>
   </style>
 
+  <style name="AppTheme.HeaderText">
+    <item name="android:gravity">center</item>
+  </style>
 
+  <style name="AppTheme.EventInput">
+    <item name="android:layout_marginBottom">20dp</item>
+  </style>
+  
 </resources>
