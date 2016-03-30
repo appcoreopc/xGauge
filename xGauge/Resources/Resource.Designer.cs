@@ -1888,10 +1888,13 @@ namespace xGauge
 			public const int select_dialog_singlechoice_material = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int support_simple_spinner_dropdown_item = 2130903077;
+			public const int setgoal_layout = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int toolbar = 2130903078;
+			public const int support_simple_spinner_dropdown_item = 2130903078;
+			
+			// aapt resource value: 0x7f030027
+			public const int toolbar = 2130903079;
 			
 			static Layout()
 			{
