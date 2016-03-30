@@ -7,7 +7,8 @@
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageActivity" />
+        android:id="@+id/imageActivity"
+        style="@style/AppTheme.GridImageElement" />
     <TextView
         android:text="Text"
         android:layout_width="match_parent"

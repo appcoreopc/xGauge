@@ -1434,19 +1434,34 @@ namespace xGauge
 			public const int addressbook = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int eventAttendance = 2130837573;
+			public const int consumption = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int home = 2130837574;
+			public const int eventAttendance = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int Icon = 2130837575;
+			public const int home = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int monoandroidsplash = 2130837576;
+			public const int Icon = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int notification_template_icon_bg = 2130837577;
+			public const int longterm = 2130837577;
+			
+			// aapt resource value: 0x7f02004a
+			public const int monoandroidsplash = 2130837578;
+			
+			// aapt resource value: 0x7f02004e
+			public const int notification_template_icon_bg = 2130837582;
+			
+			// aapt resource value: 0x7f02004b
+			public const int retail = 2130837579;
+			
+			// aapt resource value: 0x7f02004c
+			public const int sevendaycard = 2130837580;
+			
+			// aapt resource value: 0x7f02004d
+			public const int vip = 2130837581;
 			
 			static Drawable()
 			{
@@ -2077,14 +2092,17 @@ namespace xGauge
 			// aapt resource value: 0x7f080132
 			public const int AppTheme_AppBarOverlay = 2131231026;
 			
-			// aapt resource value: 0x7f080137
-			public const int AppTheme_EventInput = 2131231031;
+			// aapt resource value: 0x7f080138
+			public const int AppTheme_EventInput = 2131231032;
 			
 			// aapt resource value: 0x7f080136
 			public const int AppTheme_GridCenterText = 2131231030;
 			
-			// aapt resource value: 0x7f080138
-			public const int AppTheme_GridDefaultLayout = 2131231032;
+			// aapt resource value: 0x7f080139
+			public const int AppTheme_GridDefaultLayout = 2131231033;
+			
+			// aapt resource value: 0x7f080137
+			public const int AppTheme_GridImageElement = 2131231031;
 			
 			// aapt resource value: 0x7f080135
 			public const int AppTheme_HeaderText = 2131231029;
@@ -2503,8 +2521,8 @@ namespace xGauge
 			// aapt resource value: 0x7f080073
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131230835;
 			
-			// aapt resource value: 0x7f080139
-			public const int Mono_Android_Theme_Splash = 2131231033;
+			// aapt resource value: 0x7f08013a
+			public const int Mono_Android_Theme_Splash = 2131231034;
 			
 			// aapt resource value: 0x7f08012f
 			public const int MyTheme = 2131231023;

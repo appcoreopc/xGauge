@@ -17,14 +17,7 @@ namespace xGauge.Controls
         {
             _ctx = ctx;
             _source = source;
-
-            #region Might re-use code
-            //dataStore = new Dictionary<ActivitiesTypeModel, int>();
-            //for (int i = 0; i < source.Count; i++)
-            //{
-            //    dataStore.Add(source[i], i);
-            //} 
-            #endregion
+      
         }
 
 
@@ -57,12 +50,13 @@ namespace xGauge.Controls
             ImageView imageView = view.FindViewById<ImageView>(Resource.Id.imageActivity);
             TextView activityName = view.FindViewById<TextView>(Resource.Id.textViewActivity);
 
+            var imageResourceId = _source[position].ImageResourceId;
+
             if (activityName != null)
                 activityName.Text = _source[position].ActivityName;
 
-            var imageResourceId = _source[position].ImageResourceId;
             if (imageView != null)
-            imageView.SetImageResource(imageResourceId);
+                imageView.SetImageResource(imageResourceId);
 
             return view;
         }
