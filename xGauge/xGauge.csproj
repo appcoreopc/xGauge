@@ -65,6 +65,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
+    <Compile Include="Model\ActivitiesTypeModel.cs" />
     <Compile Include="Fragments\AddEventsFragment.cs" />
     <Compile Include="Fragments\ReportsFragment.cs" />
     <Compile Include="Fragments\ContactsFragment.cs" />
@@ -75,8 +77,15 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ActivityTypeList.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_gridelement_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <None Include="Resources\layout\grideventitem_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </None>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
@@ -91,7 +100,10 @@
     <AndroidResource Include="Resources\layout\addevent_layout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\mygoals.axml">
+    <AndroidResource Include="Resources\layout\mygoals_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activities_layout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -130,14 +142,25 @@
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
-    <Folder Include="Util\" />
+    <Folder Include="Resources\drawable\drawable-hdpi\" />
+    <Folder Include="Resources\drawable\drawable-ldpi\" />
+    <Folder Include="Resources\drawable\drawable-mdpi\" />
+    <Folder Include="Resources\drawable\drawable-xhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gauge.Core\Gauge.Core.csproj">
       <Project>{077d7321-00d2-4370-bd5a-15eb77fb67b5}</Project>
       <Name>Gauge.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\addressbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eventAttendance.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -42,8 +42,27 @@
     <item name="android:gravity">center</item>
   </style>
 
+  <style name="AppTheme.GridCenterText">
+    <item name="android:gravity">center</item>
+  </style>
+
   <style name="AppTheme.EventInput">
     <item name="android:layout_marginBottom">20dp</item>
+  </style>
+
+  <style name="AppTheme.GridDefaultLayout">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">fill_parent</item>
+    <item name="android:numColumns">auto_fit</item>
+
+    <item name="android:columnWidth">90dp</item>
+    <item name="android:verticalSpacing">10dp</item>
+    <item name="android:horizontalSpacing">10dp</item>
+
+    <item name="android:stretchMode">columnWidth</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_marginTop">60dp</item>
+
   </style>
   
 </resources>

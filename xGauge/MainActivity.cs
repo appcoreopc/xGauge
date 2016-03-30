@@ -22,10 +22,12 @@ namespace xGauge
             SetContentView(Resource.Layout.Main);
             
             
-            
             mSectionsPagerAdapter = new GaugePagerAdapter(SupportFragmentManager);
             ViewPager viewPager = FindViewById<ViewPager>(Resource.Id.container);
             viewPager.Adapter = mSectionsPagerAdapter;
+            
+            
+            // Setup loader //
 
         }
     }

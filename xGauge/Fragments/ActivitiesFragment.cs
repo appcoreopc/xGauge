@@ -8,6 +8,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using xGauge.Util;
+using xGauge.Controls;
 
 namespace xGauge.Fragments
 {
@@ -16,7 +18,10 @@ namespace xGauge.Fragments
         
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.setgoal_layout, container, false);
+            View view = inflater.Inflate(Resource.Layout.activities_layout, container, false);
+            GridView gridView = view.FindViewById<GridView>(Resource.Id.activitiesListGridView);
+            if (gridView != null)
+                gridView.Adapter = new ActivitiesTypeListAdapter(this.Context, ActivityTypeList.GetEventTypeList());
             return view;
         }
     }
