@@ -1,22 +1,61 @@
 ﻿using Gauge.Core.ViewModel;
-using System;
+using SQLite.Net;
+using SQLite.Net.Interop;
 using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gauge.Core.Data
 {
-    public class GaugeDataProvider : IGoalDataService
+    public class GaugeDataProvider 
     {
-        public GaugeDataProvider()
+        private SQLiteConnection _connection;
+
+        public GaugeDataProvider(string appPath, ISQLitePlatform platform)
         {
+            _connection = new SQLiteConnection(platform, appPath);
+
+            InitDatabase();
+        }
+
+        private void InitDatabase()
+        {
+            if (!TableExist(GaugeTableConstant.GoalTableName))
+                _connection.CreateTable<Goal>();
+
+            if (!TableExist(GaugeTableConstant.ClubTableName))
+                _connection.CreateTable<Club>();
+
+            if (!TableExist(GaugeTableConstant.ContactsTableName))
+                _connection.CreateTable<Contacts>();
 
         }
 
-        public List<GoalValueModel> GetGoals(string clubId, string clientNo)
+        private bool TableExist(string goalTableName)
         {
-            return null;   
+            var tableInfo = _connection.GetTableInfo(goalTableName);
+            return tableInfo.Any();
         }
+        
+        
+        
+        
+        
+              
+
+        public List<Goal> GetGoal(string clubId, string memberId)
+        {
+            var result = _connection.Query<Goal>("SELECT * FROM Goal WHERE ClubId = ? AND MemberId = ?", clubId, memberId);
+            return result;
+        }
+
+        public Goal GetGoalById(int Id)
+        {
+            var result = _connection.Get<Goal>(Id);
+            return result;
+        }
+
+
+
     }
 }

@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace xGauge.Content
 {
-    class ContactContentProvider : ContentProvider
+    public class ContactContentProvider : ContentProvider
     {
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {

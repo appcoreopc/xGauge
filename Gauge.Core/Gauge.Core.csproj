@@ -40,6 +40,10 @@
     <Compile Include="Data\GaugeDataProvider.cs" />
     <Compile Include="Net\GoalRestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Club.cs" />
+    <Compile Include="ViewModel\Contacts.cs" />
+    <Compile Include="ViewModel\GaugeTableConstant.cs" />
+    <Compile Include="ViewModel\Goal.cs" />
     <Compile Include="ViewModel\GoalValueModel.cs" />
     <Compile Include="Core\IGoalDataService.cs" />
   </ItemGroup>

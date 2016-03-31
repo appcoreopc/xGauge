@@ -1,13 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.Net;
 
 namespace xGauge.Content
@@ -42,8 +32,11 @@ namespace xGauge.Content
     public class GaugeConstant
     {
         public const int GoalLoaderId = 0;
+
         public const int ContactLoaderId = 1;
+
         public const int ClubLoaderId = 2;
-        public const int ReportLoaderId = 4;
+
+        public const int ReportLoaderId = 3;
     }
 }
