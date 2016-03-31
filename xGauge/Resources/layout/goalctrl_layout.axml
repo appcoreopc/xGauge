@@ -3,21 +3,25 @@
     style="@style/AppTheme.GoalLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="400dp">
+    android:layout_height="wrap_content"
+    android:id="@+id/mainContainer"
+    android:paddingTop="10dp">
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:id="@+id/mainContainer">
+        android:id="@+id/mainContainer"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
         <TextView
             android:id="@+id/textVewTitle"
             style="@style/AppTheme.GoalTextEdit" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/mainContainer">
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@+id/inputContainer">
         <ImageButton
             android:src="@drawable/minus"
             android:layout_width="wrap_content"
@@ -25,7 +29,9 @@
             android:id="@+id/imageButtonMinus" />
         <EditText
             android:id="@+id/editTextGoalValue"
-            style="@style/AppTheme.GoalTextEdit" />
+            style="@style/AppTheme.GoalTextEdit"
+            android:layout_height="match_parent"
+            android:gravity="bottom" />
         <ImageButton
             android:src="@drawable/add"
             android:layout_width="wrap_content"
