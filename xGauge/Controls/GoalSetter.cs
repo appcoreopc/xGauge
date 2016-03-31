@@ -16,17 +16,25 @@ namespace xGauge.Controls
         private TextView _Title;
         private string _externalTitle = string.Empty;
 
-
         private const string KEYNAME = "GoalValue";
         private int _goalValue;
 
-        public GoalSetter(Context ctx):base(ctx)
+       
+        public int Value
+        {
+            get
+            {
+                return _goalValue;
+            }
+        }
+
+        public GoalSetter(Context ctx) : base(ctx)
         {
             Init();
         }
-
+        
         // Fire up pretty late 
-        public GoalSetter(Context ctx, IAttributeSet attr):base(ctx, attr)
+        public GoalSetter(Context ctx, IAttributeSet attr) : base(ctx, attr)
         {
             Init();
 
@@ -48,22 +56,19 @@ namespace xGauge.Controls
             Init();
         }
         
-    
         private void Init()
         {
-            
             var view = LayoutInflater.From(Context).Inflate(Resource.Layout.goalctrl_layout, this);
             _BtnPlus = FindViewById<ImageButton>(Resource.Id.imageButtonPlus);
             _BtnMinus = FindViewById<ImageButton>(Resource.Id.imageButtonMinus);
             _EditTextGoalValue = FindViewById<EditText>(Resource.Id.editTextGoalValue);
-            _Title = FindViewById<TextView>(Resource.Id.textVewTitle); 
-          
+            _Title = FindViewById<TextView>(Resource.Id.textVewTitle);
+
             if (_BtnPlus != null)
                 _BtnPlus.Click += _BtnPlus_Click;
 
             if (_BtnMinus != null)
                 _BtnMinus.Click += _BtnMinus_Click;
-
 
             UpdateControl();
 
@@ -73,7 +78,7 @@ namespace xGauge.Controls
         {
             if (_goalValue <= 0)
                 _goalValue = 0;
-            else 
+            else
                 _goalValue--;
 
             UpdateControl();
@@ -84,11 +89,11 @@ namespace xGauge.Controls
             _goalValue++;
             UpdateControl();
         }
-             
+
         private void UpdateControl()
         {
             if (_EditTextGoalValue != null)
-            _EditTextGoalValue.Text = _goalValue.ToString();
+                _EditTextGoalValue.Text = _goalValue.ToString();
         }
 
         public void SetValue(int value)
@@ -106,19 +111,20 @@ namespace xGauge.Controls
         {
             Bundle bundle = new Bundle();
             bundle.PutInt(KEYNAME, _goalValue);
-            return bundle;    
+            return bundle;
         }
-        
+
         protected override void OnRestoreInstanceState(IParcelable state)
         {
             if (state is Bundle)
             {
-                var bundle = state as Bundle; 
+                var bundle = state as Bundle;
                 if (bundle != null)
                 {
                     int value = bundle.GetInt(KEYNAME);
                 }
-            } else 
+            }
+            else
                 base.OnRestoreInstanceState(state);
         }
     }

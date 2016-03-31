@@ -65,6 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\ClubContentProvider.cs" />
+    <Compile Include="Content\ClubHelperContentProvider.cs" />
+    <Compile Include="Content\ContactContentProvider.cs" />
+    <Compile Include="Content\ContentAuthorities.cs" />
+    <Compile Include="Content\GoalContentProvider.cs" />
+    <Compile Include="Content\ReportContentProvider.cs" />
     <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
     <Compile Include="Controls\GoalSetter.cs" />
     <Compile Include="Model\ActivitiesTypeModel.cs" />
@@ -154,16 +160,11 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Loaders\" />
     <Folder Include="Resources\drawable\drawable-hdpi\" />
     <Folder Include="Resources\drawable\drawable-ldpi\" />
     <Folder Include="Resources\drawable\drawable-mdpi\" />
     <Folder Include="Resources\drawable\drawable-xhdpi\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gauge.Core\Gauge.Core.csproj">
-      <Project>{077d7321-00d2-4370-bd5a-15eb77fb67b5}</Project>
-      <Name>Gauge.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\home.png" />

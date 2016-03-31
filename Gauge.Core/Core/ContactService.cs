@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gauge.Core.ViewModel
+namespace Gauge.Core.Core
 {
-    interface IGoalDataService
+    public class ContactService
     {
-        List<GoalValueModel> GetGoals(string clubId, string clientNo);
+
     }
 }

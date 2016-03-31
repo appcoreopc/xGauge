@@ -4,9 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
-        android:id="@+id/goalsetter"
+        android:id="@+id/newCustomer"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        customNS:Title="New Customer" />
+        android:layout_height="wrap_content"
+         />
+    <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
+        android:id="@+id/clubVisit"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+    <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
+        android:id="@+id/eventAttended"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
 </LinearLayout>
