@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme.GoalLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="400dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/mainContainer">
+        <TextView
+            android:id="@+id/textVewTitle"
+            style="@style/AppTheme.GoalTextEdit" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/mainContainer">
+        <ImageButton
+            android:src="@drawable/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButtonMinus" />
+        <EditText
+            android:id="@+id/editTextGoalValue"
+            style="@style/AppTheme.GoalTextEdit" />
+        <ImageButton
+            android:src="@drawable/add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButtonPlus" />
+    </LinearLayout>
+</LinearLayout>

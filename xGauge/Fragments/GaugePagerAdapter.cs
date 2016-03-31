@@ -22,7 +22,7 @@ namespace xGauge.Fragments
             switch (position)
             {
                 case 0:
-                    return new SetGoalFragment();
+                    return new GoalFragment(false);
                 case 1:
                     return new ActivitiesFragment();
                 case 2:

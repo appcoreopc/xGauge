@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
+    <Compile Include="Controls\GoalSetter.cs" />
     <Compile Include="Model\ActivitiesTypeModel.cs" />
     <Compile Include="Fragments\AddEventsFragment.cs" />
     <Compile Include="Fragments\ReportsFragment.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Fragments\GaugePagerAdapter.cs" />
     <Compile Include="Fragments\ActivitiesFragment.cs" />
     <Compile Include="Fragments\MainFragment.cs" />
-    <Compile Include="Fragments\SetGoalFragment.cs" />
+    <Compile Include="Fragments\GoalFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +82,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_gridelement_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\goalsettings_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\goaldisplay_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\goalctrl_layout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="Resources\layout\grideventitem_layout.axml">
@@ -176,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\vip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

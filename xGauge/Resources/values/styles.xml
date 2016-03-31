@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <style name="MyTheme" parent="MyTheme.Base">
-
   </style>
 
   <!-- Base theme applied no matter what API -->
@@ -18,7 +17,7 @@
          which is used to tint widgets -->
     <item name="colorAccent">#FF4081</item>
     <item name="colorControlHighlight">#FF4081</item>
-  	<!-- You can also set colorControlNormal, colorControlActivated
+    <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
 
   </style>
@@ -29,7 +28,7 @@
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
   </style>
-  
+
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
@@ -56,6 +55,11 @@
     <item name="android:layout_marginBottom">20dp</item>
   </style>
 
+  <style name="AppTheme.GoalButtonLeft">
+    <item name="android:layout_width">80dp</item>
+    <item name="android:gravity">left</item>
+  </style>
+
   <style name="AppTheme.GridDefaultLayout">
     <item name="android:layout_width">fill_parent</item>
     <item name="android:layout_height">fill_parent</item>
@@ -68,7 +72,24 @@
     <item name="android:stretchMode">columnWidth</item>
     <item name="android:gravity">center</item>
     <item name="android:layout_marginTop">60dp</item>
-
   </style>
-  
+
+  <style name="AppTheme.GoalButtonRight">
+    <item name="android:layout_width">80dp</item>
+    <item name="android:layout_height">30dp</item>
+    <item name="android:gravity">right</item>
+  </style>
+
+  <style name="AppTheme.GoalTextEdit">
+    <item name="android:layout_width">200dp</item>
+    <item name="android:layout_height">30dp</item>
+  </style>
+
+  <style name="AppTheme.GoalLayout">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">30dp</item>
+    <item name="android:layout_height">30dp</item>
+    <item name="android:orientation">vertical</item>
+  </style>
+
 </resources>
