@@ -37,7 +37,6 @@ namespace xGauge.Content
             return true;
         }
 
-
         //
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {

@@ -1,20 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using xGauge.Util;
 using xGauge.Controls;
+using Android.App;
 
 namespace xGauge.Fragments
 {
     public class ActivitiesFragment : Android.Support.V4.App.Fragment
     {
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+        }
+        
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View view = inflater.Inflate(Resource.Layout.activities_layout, container, false);
@@ -27,12 +28,19 @@ namespace xGauge.Fragments
 
             return view;
         }
-
+        
         private void GridView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             if (e.Id == 0)
             {
+                //var fragment = new ContactsFragment();
+                //var fm = FragmentManager;
+                //var fTrans = fm.BeginTransaction();
+                //fTrans.Replace(Resource.Id.container, fragment);
+                //fTrans.Commit();
 
+                //Activity.StartActivity(new Intent(Activity, typeof(ContactActivity)));
+                //OnSaveInstanceState(null);
             }
         }
     }

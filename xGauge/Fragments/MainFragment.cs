@@ -10,5 +10,16 @@ namespace xGauge.Fragments
             View view = inflater.Inflate(Resource.Layout.setgoal_layout, container, false);
             return view;
         }
+
+        public override void OnSaveInstanceState(Bundle outState)
+        {
+            base.OnSaveInstanceState(outState);
+        }
+
+        public override void OnViewStateRestored(Bundle savedInstanceState)
+        {
+            base.OnViewStateRestored(savedInstanceState);
+        }
+
     }
 }

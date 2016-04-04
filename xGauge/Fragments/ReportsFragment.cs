@@ -7,7 +7,7 @@ namespace xGauge.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.setgoal_layout, container, false);
+            View view = inflater.Inflate(Resource.Layout.report_layout, container, false);
             return view;
         }
     }

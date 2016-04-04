@@ -116,12 +116,15 @@ namespace xGauge.Controls
 
         protected override void OnRestoreInstanceState(IParcelable state)
         {
-            if (state is Bundle)
+            if (state != null)
             {
-                var bundle = state as Bundle;
-                if (bundle != null)
+                if (state is Bundle)
                 {
-                    int value = bundle.GetInt(KEYNAME);
+                    var bundle = state as Bundle;
+                    if (bundle != null)
+                    {
+                        int value = bundle.GetInt(KEYNAME);
+                    }
                 }
             }
             else

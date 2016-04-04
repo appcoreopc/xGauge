@@ -65,6 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactActivity.cs" />
     <Compile Include="Content\ClubContentProvider.cs" />
     <Compile Include="Content\ClubHelperContentProvider.cs" />
     <Compile Include="Content\ContactContentProvider.cs" />
@@ -73,6 +74,10 @@
     <Compile Include="Content\ReportContentProvider.cs" />
     <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
     <Compile Include="Controls\GoalSetter.cs" />
+    <Compile Include="Fragments\LoadContactAdapter.cs" />
+    <Compile Include="Fragments\GoalCursorSupport.cs" />
+    <Compile Include="Fragments\LoaderCursorSupport.cs" />
+    <Compile Include="Fragments\LoaderCustomSupport.cs" />
     <Compile Include="Model\ActivitiesTypeModel.cs" />
     <Compile Include="Fragments\AddEventsFragment.cs" />
     <Compile Include="Fragments\ReportsFragment.cs" />
@@ -82,9 +87,12 @@
     <Compile Include="Fragments\MainFragment.cs" />
     <Compile Include="Fragments\GoalFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Model\Contact.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ActivityTypeList.cs" />
+    <Compile Include="Util\ContactUtil.cs" />
+    <Compile Include="Util\PermissionHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_gridelement_layout.axml">
@@ -120,6 +128,13 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\activities_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\loadcontact_layout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\loadcontact_element_layout.axml" />
+    <AndroidResource Include="Resources\layout\report_layout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -160,7 +175,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Loaders\" />
     <Folder Include="Resources\drawable\drawable-hdpi\" />
     <Folder Include="Resources\drawable\drawable-ldpi\" />
     <Folder Include="Resources\drawable\drawable-mdpi\" />
@@ -200,6 +214,9 @@
     <AndroidResource Include="Resources\values\attrs.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_tabs_pager.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
