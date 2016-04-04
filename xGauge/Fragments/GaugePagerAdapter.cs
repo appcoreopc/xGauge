@@ -10,14 +10,14 @@ using System.Collections.Generic;
 
 namespace xGauge.Fragments
 {
-    public class GaugePagerAdapter : FragmentPagerAdapter, TabHost.IOnTabChangeListener, ViewPager.IOnPageChangeListener
+    public class GaugeFragmentPagerAdapter : FragmentPagerAdapter, TabHost.IOnTabChangeListener, ViewPager.IOnPageChangeListener
     {
         private Context _context;
         private TabHost _tabHost;
         private ViewPager _viewPager;
         private List<TabInfo> _tabs = new List<TabInfo>();
 
-        public GaugePagerAdapter(FragmentActivity activity, TabHost tabHost, ViewPager pager)
+        public GaugeFragmentPagerAdapter(FragmentActivity activity, TabHost tabHost, ViewPager pager)
             :base(activity.SupportFragmentManager)
         {
 

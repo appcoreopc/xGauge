@@ -74,6 +74,7 @@
     <Compile Include="Content\ReportContentProvider.cs" />
     <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
     <Compile Include="Controls\GoalSetter.cs" />
+    <Compile Include="Fragments\ContactCustomAdapter.cs" />
     <Compile Include="Fragments\LoadContactAdapter.cs" />
     <Compile Include="Fragments\GoalCursorSupport.cs" />
     <Compile Include="Fragments\LoaderCursorSupport.cs" />
@@ -217,6 +218,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_tabs_pager.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\editcontact.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

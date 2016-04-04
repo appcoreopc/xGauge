@@ -24,9 +24,9 @@ namespace xGauge.Fragments
 
         public LoadContactAdapter(Context context, ICursor c, [GeneratedEnum] CursorAdapterFlags flags):base(context, c, flags)
         {
+
         }
-
-
+        
         public override void BindView(View view, Context context, ICursor cursor)
         {
             

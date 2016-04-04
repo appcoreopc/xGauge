@@ -6,4 +6,6 @@
   <string name="AddEventCategoryText">Category</string>
   <string name="AddEventNameText">Event Name</string>
   <string name="AddEventSaveText">Save</string>
+  <string name="SystemPermissionGranted">Permission Granted</string>
+  <string name="SystemPermissionNotGranted">Permission Not Granted</string>
 </resources>

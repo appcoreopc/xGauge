@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="50dp">
     <TextView
         android:id="@+id/textViewContactNameContactLayout"
-        style="@style/AppTheme.GoalTextEdit" />
+        style="@style/AppTheme.GoalTextEdit"
+        android:gravity="center_vertical"
+        android:text="TestString"
+        android:layout_height="match_parent" />
     <ImageButton
-        android:src="@drawable/minus"
+        android:src="@drawable/editcontact"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageButtonActivityContactLayout" />
     <ImageButton
-        android:src="@drawable/add"
+        android:src="@drawable/phone"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageButtonCallContactLayout" />
