@@ -7,8 +7,7 @@
         android:id="@+id/newCustomer"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        customNS:Title="New Customer" />
+        android:layout_height="wrap_content" />
     <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
         android:id="@+id/clubVisit"
         android:orientation="vertical"
@@ -19,4 +18,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:weightSum="1.0" />
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSaveGoal" />
+    <Button
+        android:text="Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelGoal" />
 </LinearLayout>

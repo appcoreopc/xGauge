@@ -38,8 +38,10 @@
     <Compile Include="Core\ContactService.cs" />
     <Compile Include="Core\GoalService.cs" />
     <Compile Include="Data\GaugeDataProvider.cs" />
+    <Compile Include="Data\GoalDataProvider.cs" />
     <Compile Include="Net\GoalRestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Report.cs" />
     <Compile Include="ViewModel\Club.cs" />
     <Compile Include="ViewModel\Contacts.cs" />
     <Compile Include="ViewModel\GaugeTableConstant.cs" />

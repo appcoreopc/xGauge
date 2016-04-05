@@ -12,7 +12,7 @@ namespace xGauge.Fragments
     {
 
         public override void OnCreate(Bundle savedInstanceState)
-        {
+        {   
             base.OnCreate(savedInstanceState);
         }
         
@@ -33,14 +33,7 @@ namespace xGauge.Fragments
         {
             if (e.Id == 0)
             {
-                //var fragment = new ContactsFragment();
-                //var fm = FragmentManager;
-                //var fTrans = fm.BeginTransaction();
-                //fTrans.Replace(Resource.Id.container, fragment);
-                //fTrans.Commit();
 
-                //Activity.StartActivity(new Intent(Activity, typeof(ContactActivity)));
-                //OnSaveInstanceState(null);
             }
         }
     }

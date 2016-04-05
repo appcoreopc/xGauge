@@ -18,8 +18,7 @@ namespace xGauge.Controls
 
         private const string KEYNAME = "GoalValue";
         private int _goalValue;
-
-       
+        
         public int Value
         {
             get

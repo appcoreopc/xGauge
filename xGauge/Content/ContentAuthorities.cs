@@ -6,25 +6,25 @@ namespace xGauge.Content
     {
         public const string Authorities = "xGauge.xGauge";
 
+        public const string GoalAuthorities = ".Goal";
+
         public const string Content = "content://";
 
-        public const string ContactContentProvider = "/contact";
+        public const string ContactContentProviderAuthorities = "xGauge.Contact";
 
         public const string GoalContentProvider = "/goal";
 
-        public const string GoalContentProviderAuthorities = Authorities;
+        public const string GoalContentProviderAuthorities = "xGauge.Goal";
 
-        public const string ClubContentProvider = "/club";
+        public const string ReportContentProviderAuthorities = "xGauge.Report";
+        
+        public const string ClubContentProviderAuthorities = "xGauge.Club";
+        
+        public static Uri REPORT_CONTENT_URI = Uri.Parse(Content + ReportContentProviderAuthorities);
 
-        public const string ReportContentProvider = "/report";
+        public static Uri CLUB_CONTENT_URI = Uri.Parse(Content + ClubContentProviderAuthorities);
 
-        public static Uri GOAL_CONTENT_URI = Uri.Parse(Content + Authorities + GoalContentProvider);
-
-        public static Uri REPORT_CONTENT_URI = Uri.Parse(Content + Authorities + ReportContentProvider);
-
-        public static Uri CLUB_CONTENT_URI = Uri.Parse(Content + Authorities + ClubContentProvider);
-
-        public static Uri CONTACT_CONTENT_URI = Uri.Parse(Content + Authorities + ContactContentProvider);
+        public static Uri CONTACT_CONTENT_URI = Uri.Parse(Content + ContactContentProviderAuthorities);
 
     }
     

@@ -25,14 +25,10 @@ namespace xGauge.Fragments
 	            fm.BeginTransaction().Add(Android.Resource.Id.Content, list).Commit();
 	        }
 		}
-
-              
-
-		
+        
 		public class CursorLoaderListFragment : Android.Support.V4.App.Fragment, Android.Support.V4.App.LoaderManager.ILoaderCallbacks
 		{
-			LoaderCursorSupport parent;
-
+			private LoaderCursorSupport parent;
             public CursorLoaderListFragment() {}
 
 			public CursorLoaderListFragment (LoaderCursorSupport parent)

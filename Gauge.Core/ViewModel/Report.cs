@@ -1,19 +1,22 @@
 ﻿using SQLite.Net.Attributes;
 
+
 namespace Gauge.Core.ViewModel
 {
-    public class Goal
+    public class Report
     {
+
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string MemberId { get; set; }
-
         public string ClubId { get; set; }
 
-        public int Type { get; set; }
-        
-        public int GoalValue { get; set; }
+        public string ClubName { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public bool IsDeleted { get; set; }
 
     }
+
 }
