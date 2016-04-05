@@ -17,12 +17,14 @@ namespace xGauge.Fragments
         private SimpleCursorAdapter _adapter;
         public static readonly string QUERY_KEY = "query";
         public static readonly string TAG = "ContactablesLoaderCallbacks";
+        private ListView listview;
+        private ContactAdapter _myAdapter;
+
         public string[] CONTACTS_SUMMARY_PROJECTION = new string[] {
                 Contacts.People.InterfaceConsts.Id,
-                Contacts.People.InterfaceConsts.DisplayName
+                Contacts.People.InterfaceConsts.DisplayName,
+                Contacts.People.InterfaceConsts.Number
             };
-
-        private ListView listview;
 
         public ContactsFragment()
         {
@@ -34,27 +36,13 @@ namespace xGauge.Fragments
             listview = view.FindViewById<ListView>(Resource.Id.loadContactListView);
             return view;
         }
-
-        ContactAdapter _myAdapter;
-
+        
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-
-            //_adapter = new SimpleCursorAdapter(Activity,
-            //         Resource.Layout.loadcontact_element_layout, null,
-            //         new string[] { Android.Provider.Contacts.People.InterfaceConsts.DisplayName },
-            //         new int[] { Resource.Id.textViewContactNameContactLayout });
-            
-            //_myAdapter = new ContactAdapter(Context, null);
-            
-            //if (listview != null)
-            //    listview.Adapter = _adapter;
-
             LoaderManager.InitLoader(0, null, this);
         }
-
-
+        
         Android.Support.V4.Content.Loader Android.Support.V4.App.LoaderManager.ILoaderCallbacks.OnCreateLoader(int id, Bundle args)
         {
             var baseUri = Contacts.People.ContentUri;
@@ -75,7 +63,6 @@ namespace xGauge.Fragments
             {
                 _myAdapter = new ContactAdapter(Context, cursor);
                 listview.Adapter = _myAdapter;
-                 //_myAdapter.SwapCursor(cursor);
             }
         }
 

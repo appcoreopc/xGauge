@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace xGauge
 {
-    
+
     [Activity(Label = "xGauge", MainLauncher = true, Icon = "@drawable/icon")]
     public class FragmentTabsPager : AppCompatActivity
     {
@@ -35,11 +35,11 @@ namespace xGauge
 
             tabsAdapter = new TabsAdapter(this, tabHost, viewPager);
 
-            tabsAdapter.AddTab(tabHost.NewTabSpec("Goal").SetIndicator("Goal"), Java.Lang.Class.FromType(typeof(GoalSupportFragment.GoalFragment)), null);
-            tabsAdapter.AddTab(tabHost.NewTabSpec("Activities").SetIndicator("Activities"), Java.Lang.Class.FromType(typeof(ActivitiesFragment)), null);
-            tabsAdapter.AddTab(tabHost.NewTabSpec("Contacts").SetIndicator("Contacts"), Java.Lang.Class.FromType(typeof(ContactsFragment)), null);
-            tabsAdapter.AddTab(tabHost.NewTabSpec("Report").SetIndicator("Report"), Java.Lang.Class.FromType(typeof(ReportsFragment)), null);
-            
+            tabsAdapter.AddTab(tabHost.NewTabSpec("Goal").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.target)), Java.Lang.Class.FromType(typeof(GoalSupportFragment.GoalFragment)), null);
+            tabsAdapter.AddTab(tabHost.NewTabSpec("Activities").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.activities)), Java.Lang.Class.FromType(typeof(ActivitiesFragment)), null);
+            tabsAdapter.AddTab(tabHost.NewTabSpec("Contacts").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.contacts)), Java.Lang.Class.FromType(typeof(ContactsFragment)), null);
+            tabsAdapter.AddTab(tabHost.NewTabSpec("Report").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.report)), Java.Lang.Class.FromType(typeof(ReportsFragment)), null);
+
             if (savedInstanceState != null)
             {
                 tabHost.SetCurrentTabByTag(savedInstanceState.GetString(tabKeyString));
@@ -73,7 +73,7 @@ namespace xGauge
                     args = _args;
                 }
             }
-            
+
             public override IParcelable SaveState()
             {
                 return base.SaveState();
@@ -164,7 +164,6 @@ namespace xGauge
             {
 
             }
-
         }
     }
 }

@@ -74,7 +74,7 @@
     <Compile Include="Content\ReportContentProvider.cs" />
     <Compile Include="Controls\ActivitiesTypeListAdapter.cs" />
     <Compile Include="Controls\GoalSetter.cs" />
-    <Compile Include="Fragments\ContactCustomAdapter.cs" />
+    <Compile Include="Fragments\ContactAdapter.cs" />
     <Compile Include="Fragments\LoadContactAdapter.cs" />
     <Compile Include="Fragments\GoalCursorSupport.cs" />
     <Compile Include="Fragments\LoaderCursorSupport.cs" />
@@ -94,6 +94,8 @@
     <Compile Include="Util\ActivityTypeList.cs" />
     <Compile Include="Util\ContactUtil.cs" />
     <Compile Include="Util\PermissionHandler.cs" />
+    <Compile Include="Util\PhoneUtil.cs" />
+    <Compile Include="Util\SimpleMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_gridelement_layout.axml">
@@ -224,6 +226,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\editcontact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\contacts.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\activities.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\target.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

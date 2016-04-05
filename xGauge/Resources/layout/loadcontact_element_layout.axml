@@ -8,15 +8,22 @@
         style="@style/AppTheme.GoalTextEdit"
         android:gravity="center_vertical"
         android:text="TestString"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:layout_width="240.0dp" />
     <ImageButton
         android:src="@drawable/editcontact"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/imageButtonActivityContactLayout" />
+        android:id="@+id/imageButtonActivityContactLayout"
+        android:background="@null"
+        android:paddingLeft="20dp" />
     <ImageButton
         android:src="@drawable/phone"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/imageButtonCallContactLayout" />
+        android:id="@+id/imageButtonCallContactLayout"
+        android:background="@null"
+        android:paddingLeft="20dp" />
 </LinearLayout>

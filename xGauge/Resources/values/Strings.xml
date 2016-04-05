@@ -8,4 +8,5 @@
   <string name="AddEventSaveText">Save</string>
   <string name="SystemPermissionGranted">Permission Granted</string>
   <string name="SystemPermissionNotGranted">Permission Not Granted</string>
+  <string name="UrlCannotBeNullMessage">Message cannot be null.</string>
 </resources>

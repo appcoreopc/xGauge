@@ -1434,49 +1434,61 @@ namespace xGauge
 			public const int abc_textfield_search_material = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int add = 2130837572;
+			public const int activities = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int addressbook = 2130837573;
+			public const int add = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int consumption = 2130837574;
+			public const int addressbook = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int editcontact = 2130837575;
+			public const int consumption = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int eventAttendance = 2130837576;
+			public const int contacts = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int home = 2130837577;
+			public const int editcontact = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int Icon = 2130837578;
+			public const int eventAttendance = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int longterm = 2130837579;
+			public const int home = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int minus = 2130837580;
+			public const int Icon = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int monoandroidsplash = 2130837581;
-			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			public const int longterm = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int phone = 2130837582;
+			public const int minus = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int retail = 2130837583;
+			public const int monoandroidsplash = 2130837583;
+			
+			// aapt resource value: 0x7f020056
+			public const int notification_template_icon_bg = 2130837590;
 			
 			// aapt resource value: 0x7f020050
-			public const int sevendaycard = 2130837584;
+			public const int phone = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int vip = 2130837585;
+			public const int report = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int retail = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int sevendaycard = 2130837587;
+			
+			// aapt resource value: 0x7f020054
+			public const int target = 2130837588;
+			
+			// aapt resource value: 0x7f020055
+			public const int vip = 2130837589;
 			
 			static Drawable()
 			{
@@ -2084,6 +2096,9 @@ namespace xGauge
 			
 			// aapt resource value: 0x7f05001b
 			public const int SystemPermissionNotGranted = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int UrlCannotBeNullMessage = 2131034140;
 			
 			// aapt resource value: 0x7f050000
 			public const int abc_action_bar_home_description = 2131034112;
