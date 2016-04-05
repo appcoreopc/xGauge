@@ -14,7 +14,6 @@ namespace Gauge.Core.Data
         public GaugeDataProvider(string appPath, ISQLitePlatform platform)
         {
             _connection = new SQLiteConnection(platform, appPath);
-
             InitDatabase();
         }
 
@@ -37,12 +36,6 @@ namespace Gauge.Core.Data
             return tableInfo.Any();
         }
         
-        
-        
-        
-        
-              
-
         public List<Goal> GetGoal(string clubId, string memberId)
         {
             var result = _connection.Query<Goal>("SELECT * FROM Goal WHERE ClubId = ? AND MemberId = ?", clubId, memberId);

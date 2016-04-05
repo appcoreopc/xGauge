@@ -32,7 +32,10 @@
             android:id="@+id/editTextGoalValue"
             style="@style/AppTheme.GoalTextEdit"
             android:layout_height="match_parent"
-            android:gravity="bottom" />
+            android:gravity="center"
+            android:text="0"
+            android:inputType="number"
+            android:textAlignment="center" />
         <ImageButton
             android:src="@drawable/add"
             android:background="@null"

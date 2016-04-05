@@ -20,7 +20,6 @@ namespace xGauge.Controls
       
         }
 
-
         public override ActivitiesTypeModel this[int position]
         {
             get
