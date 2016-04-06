@@ -18,24 +18,6 @@ namespace Gauge.Core.Data
             _connection = new SQLiteConnection(platform, appPath);
         }
 
-        //public void CreateClubTable()
-        //{
-        //    if (!TableExist(GaugeTableConstant.ClubTableName))
-        //        _connection.CreateTable<Club>();
-        //}
-
-        //public void CreateContactTable()
-        //{
-        //    if (!TableExist(GaugeTableConstant.ContactsTableName))
-        //        _connection.CreateTable<Contacts>();
-        //}
-
-        //public void CreateReportTable()
-        //{
-        //    if (!TableExist(GaugeTableConstant.ReportTableName))
-        //        _connection.CreateTable<Report>();
-        //}
-
         public static bool TableExist(SQLiteConnection _connection, string goalTableName)
         {
             var tableInfo = _connection.GetTableInfo(goalTableName);

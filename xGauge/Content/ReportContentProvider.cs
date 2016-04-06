@@ -1,16 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
 using Android.Database;
-using Android.Net;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Gauge.Core.Data;
 using xGauge.Util;
 using Gauge.Core.ViewModel;
@@ -22,12 +11,13 @@ namespace xGauge.Content
     public class ReportContentProvider : ContentProvider
     {
         public static Android.Net.Uri CONTENT_URI = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.ReportContentProviderAuthorities);
-
-        private GoalDataProvider dataProvider = new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
+        private const string TABLENAME = "GOAL";
+        private ReportDataProvider dataProvider = new ReportDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
 
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {
-            return dataProvider.Delete(selection, selectionArgs);
+            var deleteQuery = QueryBuilder.BuildDelete(TABLENAME, selection);
+            return dataProvider.Delete(deleteQuery, selectionArgs);
         }
 
         public override string GetType(Android.Net.Uri uri)
@@ -56,7 +46,7 @@ namespace xGauge.Content
 
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {
-            string query = "SELECT " + projection + " WHERE " + selection + " ORDER BY " + sortOrder;
+            var query = QueryBuilder.BuildQuery(TABLENAME, projection, selection, selectionArgs, sortOrder);
             var result = dataProvider.Query(query, selectionArgs);
             if (result != null)
                 return CursorMatrixCreator.Create(result);
@@ -65,6 +55,12 @@ namespace xGauge.Content
 
         public override int Update(Android.Net.Uri uri, ContentValues values, string selection, string[] selectionArgs)
         {
+            string clubIdValue = values.GetAsString("ClubId");
+            string memberIdValue = values.GetAsString("MemberId");
+
+            string value = " clubId = '" + clubIdValue + "'" + ", memberId = '" + memberIdValue + "'";
+            var query = QueryBuilder.BuildUpdate(TABLENAME, value, selection);
+
             return dataProvider.Update(selection, selectionArgs);
         }
     }

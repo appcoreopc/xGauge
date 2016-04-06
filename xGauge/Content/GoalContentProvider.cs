@@ -11,12 +11,13 @@ namespace xGauge.Content
     {
         public static Android.Net.Uri CONTENT_URI = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
         private GoalDataProvider dataProvider = new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
-        
+        private const string TABLENAME = "GOAL";
+
         public static string[] Projections = { "Id", "MemberId", "ClubId", "Type", "GoalValue" };
         
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {
-            var deleteQuery = QueryBuilder.BuildDelete("GOAL", selection);
+            var deleteQuery = QueryBuilder.BuildDelete(TABLENAME, selection);
             return dataProvider.Delete(deleteQuery, selectionArgs);
         }
 
@@ -47,7 +48,7 @@ namespace xGauge.Content
         
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {
-            var query = QueryBuilder.BuildQuery("GOAL", projection, selection, selectionArgs, sortOrder);
+            var query = QueryBuilder.BuildQuery(TABLENAME, projection, selection, selectionArgs, sortOrder);
             var result = dataProvider.Query(query, selectionArgs);
             if (result != null)
                 return CursorMatrixCreator.Create(result);
@@ -60,7 +61,8 @@ namespace xGauge.Content
             string memberIdValue = values.GetAsString("MemberId");
 
             string value = " clubId = '" + clubIdValue + "'" + ", memberId = '" + memberIdValue + "'";
-            var query = QueryBuilder.BuildUpdate("GOAL", value, selection);
+            var query = QueryBuilder.BuildUpdate(TABLENAME, value, selection);
+
             return dataProvider.Update(query, selectionArgs);
         }
     }

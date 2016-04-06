@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Gauge.Core.Data
 {
-    public class GoalDataProvider
+    public class ReportDataProvider
     {
         private SQLiteConnection _connection;
-        public GoalDataProvider(string appPath, ISQLitePlatform platform)
+        public ReportDataProvider(string appPath, ISQLitePlatform platform)
         {
             _connection = new SQLiteConnection(platform, appPath);
         }                

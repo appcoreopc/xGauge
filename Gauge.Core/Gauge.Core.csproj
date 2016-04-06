@@ -38,6 +38,7 @@
     <Compile Include="Core\ContactService.cs" />
     <Compile Include="Core\GoalService.cs" />
     <Compile Include="Data\GaugeDataProvider.cs" />
+    <Compile Include="Data\ReportDataProvider.cs" />
     <Compile Include="Data\GoalDataProvider.cs" />
     <Compile Include="Data\QueryBuilder.cs" />
     <Compile Include="Net\GoalRestService.cs" />
