@@ -5,6 +5,7 @@ using Android.Support.V4.App;
 using xGauge.Content;
 using Android.Widget;
 using Android.Database;
+using Gauge.Core.Net;
 
 namespace xGauge.Fragments
 {
@@ -69,9 +70,8 @@ namespace xGauge.Fragments
                     {
                         cancelBtn.Click += CancelBtn_Click;
                     }
-
                 }
-                
+                                
                 return view;
             }
 
@@ -83,11 +83,10 @@ namespace xGauge.Fragments
 
             private void SaveBtn_Click(object sender, System.EventArgs e)
             {
-
-                Android.Net.Uri CONTENT_URI = 
-                    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-
-                Activity.ContentResolver.Query(CONTENT_URI, null, null, null, null);
+                //GoalRestService.GetGoalsAsync("nc999", "cn76055");
+                //Android.Net.Uri CONTENT_URI = 
+                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+                //Activity.ContentResolver.Query(CONTENT_URI, null, null, null, null);
             }
 
             public override void OnCreate(Bundle savedInstanceState)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gauge.Core
 {
-    interface IGoalDataService
+    public interface IGoalDataService
     {
         List<GoalValueModel> GetGoals(string clubId, string clientNo);
     }

@@ -31,7 +31,7 @@ namespace xGauge
             tabHost.Setup();
 
             viewPager = FindViewById<ViewPager>(Resource.Id.pager);
-            viewPager.OffscreenPageLimit = 4;
+            viewPager.OffscreenPageLimit = 5;
 
             tabsAdapter = new TabsAdapter(this, tabHost, viewPager);
 
