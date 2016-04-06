@@ -45,7 +45,7 @@ namespace xGauge.Content
             goal.GoalValue = values.GetAsInteger("GoalValue");
 
             var insertedId = dataProvider.Insert(goal);
-            Android.Net.Uri insertUrl = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.Authorities + GaugeAuthorities.GoalContentProvider + "/" + insertedId);
+            Android.Net.Uri insertUrl = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.ReportContentProviderAuthorities + "/" + insertedId);
             return insertUrl;
         }
 
@@ -57,9 +57,9 @@ namespace xGauge.Content
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {
             string query = "SELECT " + projection + " WHERE " + selection + " ORDER BY " + sortOrder;
-            //var result = dataProvider.Query(query, selectionArgs);
-            //if (result != null)
-            //    return CursorMatrixCreator.Create(result);
+            var result = dataProvider.Query(query, selectionArgs);
+            if (result != null)
+                return CursorMatrixCreator.Create(result);
             return null;
         }
 

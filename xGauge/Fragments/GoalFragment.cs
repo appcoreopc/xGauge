@@ -77,16 +77,16 @@ namespace xGauge.Fragments
 
             private void CancelBtn_Click(object sender, System.EventArgs e)
             {
-                
-
             }
 
             private void SaveBtn_Click(object sender, System.EventArgs e)
-            {
-                //GoalRestService.GetGoalsAsync("nc999", "cn76055");
-                //Android.Net.Uri CONTENT_URI = 
-                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-                //Activity.ContentResolver.Query(CONTENT_URI, null, null, null, null);
+            {                
+                string selection = "ClubId = '?' AND MemberId = '?'" ;
+                string[] selectionArg = { "0", "CN640521" };
+
+                Android.Net.Uri CONTENT_URI =
+                    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+                Activity.ContentResolver.Query(CONTENT_URI, GoalContentProvider.Projections, selection, selectionArg, null);
             }
 
             public override void OnCreate(Bundle savedInstanceState)

@@ -14,6 +14,7 @@ namespace Gauge.Core.ViewModel
         public int Type { get; set; }
         
         public int GoalValue { get; set; }
+        
 
     }
 }

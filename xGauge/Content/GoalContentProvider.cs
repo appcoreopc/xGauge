@@ -11,7 +11,9 @@ namespace xGauge.Content
     {
         public static Android.Net.Uri CONTENT_URI = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
         private GoalDataProvider dataProvider = new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
-
+        
+        public static string[] Projections = { "Id", "MemberId", "ClubId", "Type", "GoalValue" };
+        
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {
             return dataProvider.Delete(selection, selectionArgs);
@@ -43,10 +45,12 @@ namespace xGauge.Content
 
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {
-            string query = "SELECT " + projection + " WHERE " + selection + " ORDER BY " + sortOrder;
-            //var result = dataProvider.Query(query, selectionArgs);
-            //if (result != null)
-            //    return CursorMatrixCreator.Create(result);
+
+            var query = QueryBuilder.buildQuery("GOAL", projection, selection, selectionArgs, sortOrder);
+
+            var result = dataProvider.Query(query, selectionArgs);
+            if (result != null)
+                return CursorMatrixCreator.Create(result);
             return null;
         }
 

@@ -15,6 +15,8 @@ namespace Gauge.Core.Data
                 
         public bool CreateGoalTable()
         {
+            var result = GaugeDataProvider.TableExist(_connection, "SomeStupidTable");
+
             if (!GaugeDataProvider.TableExist(_connection, GaugeTableConstant.GoalTableName))
             {
                 _connection.CreateTable<Goal>();

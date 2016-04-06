@@ -28,7 +28,6 @@ namespace xGauge.Content
 
     }
     
-
     public class GaugeConstant
     {
         public const int GoalLoaderId = 0;

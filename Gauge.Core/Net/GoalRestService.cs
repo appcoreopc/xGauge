@@ -22,19 +22,28 @@ namespace Gauge.Core.Net
 
         public string MemberId { get; set; }
     }
-
-
+    
     public class GoalRestService
-    {   
+    {
+        private const string GoalPath = "/Goal";
         public static async Task GetGoalsAsync(string clubId, string memberId)
         {                        
-            var result = await GaugeRestConfig.baseUrl.AppendPathSegment("/Goal" + "/" + clubId + "/" + memberId).GetJsonAsync();
+            var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/" + clubId + "/" + memberId).GetJsonAsync();
 
             if (result.IsCompleted)
             {
                 var a = result.Result;
             }
         }
+        
+        public static async Task SetGoalsAsync(List<Goal> goals)
+        {            
+            var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath).GetJsonAsync();
 
+            if (result.IsCompleted)
+            {
+                var a = result.Result;
+            }
+        }
     }
 }
