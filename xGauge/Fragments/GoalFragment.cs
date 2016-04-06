@@ -6,6 +6,7 @@ using xGauge.Content;
 using Android.Widget;
 using Android.Database;
 using Gauge.Core.Net;
+using Android.Content;
 
 namespace xGauge.Fragments
 {
@@ -80,13 +81,49 @@ namespace xGauge.Fragments
             }
 
             private void SaveBtn_Click(object sender, System.EventArgs e)
-            {                
-                string selection = "ClubId = '?' AND MemberId = '?'" ;
-                string[] selectionArg = { "0", "CN640521" };
+            {
+                //string selection = "ClubId = '?' AND MemberId = '?'" ;
+                //string[] selectionArg = { "0", "CN640521" };
 
+                //Android.Net.Uri CONTENT_URI =
+                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+                //Activity.ContentResolver.Query(CONTENT_URI, GoalContentProvider.Projections, selection, selectionArg, null);
+
+
+
+                //Android.Net.Uri CONTENT_URI =
+                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+
+                //string selection = "ClubId = '?' AND MemberId = '?'";
+                //string[] selectionArg = { "0", "CN640521" };
+
+                //ContentValues content = new ContentValues();
+                //content.Put("ClubId", "NC999");
+                //content.Put("MemberId", "CN640521");
+
+                //Activity.ContentResolver.Update(CONTENT_URI, content, selection, selectionArg);
+
+
+                //Android.Net.Uri CONTENT_URI =
+                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+
+                //string selection = "ClubId = '?'";
+                //string[] selectionArg = { "999NC"};
+
+                //Activity.ContentResolver.Delete(CONTENT_URI, selection, selectionArg);
+                
                 Android.Net.Uri CONTENT_URI =
                     Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-                Activity.ContentResolver.Query(CONTENT_URI, GoalContentProvider.Projections, selection, selectionArg, null);
+                
+                ContentValues values = new ContentValues();
+                values.Put("MemberId", "12345");
+                values.Put("ClubId", "NC111");
+                values.Put("MemberId", "12345");
+                values.Put("Type", 1234);
+                values.Put("GoalValue", 99);
+                
+                Activity.ContentResolver.Insert(CONTENT_URI, values);
+                
             }
 
             public override void OnCreate(Bundle savedInstanceState)

@@ -14,9 +14,7 @@ namespace Gauge.Core.Data
         }
                 
         public bool CreateGoalTable()
-        {
-            var result = GaugeDataProvider.TableExist(_connection, "SomeStupidTable");
-
+        {   
             if (!GaugeDataProvider.TableExist(_connection, GaugeTableConstant.GoalTableName))
             {
                 _connection.CreateTable<Goal>();
@@ -25,9 +23,9 @@ namespace Gauge.Core.Data
             return false; 
         }
 
-        public int Delete(string selection, object[] selectionArg)
+        public int Delete(string query, object[] selectionArg)
         {
-            int  rowDeleted = _connection.Execute(selection, selectionArg);
+            int  rowDeleted = _connection.Execute(query, selectionArg);
             return rowDeleted;
         }
 
@@ -41,9 +39,9 @@ namespace Gauge.Core.Data
             return _connection.Query<Goal>(query, dparams);
         }
         
-        public int Update(string selection, object[] selectionArg)
+        public int Update(string query, object[] selectionArg)
         {
-            int rowUpdated = _connection.Execute(selection, selectionArg);
+            int rowUpdated = _connection.Execute(query, selectionArg);
             return rowUpdated;
         }
 

@@ -97,6 +97,7 @@
     <Compile Include="Util\PermissionHandler.cs" />
     <Compile Include="Util\PhoneUtil.cs" />
     <Compile Include="Util\SimpleMessage.cs" />
+    <Compile Include="Util\UrlUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_gridelement_layout.axml">

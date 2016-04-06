@@ -16,7 +16,8 @@ namespace xGauge.Content
         
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {
-            return dataProvider.Delete(selection, selectionArgs);
+            var deleteQuery = QueryBuilder.BuildDelete("GOAL", selection);
+            return dataProvider.Delete(deleteQuery, selectionArgs);
         }
 
         public override string GetType(Android.Net.Uri uri)
@@ -27,7 +28,8 @@ namespace xGauge.Content
         public override Android.Net.Uri Insert(Android.Net.Uri uri, ContentValues values)
         {
             Goal goal = new Goal();
-            goal.Id = values.GetAsInteger("Id");
+            //goal.Id = values.GetAsInteger("Id");
+
             goal.MemberId = values.GetAsString("MemberId");
             goal.ClubId = values.GetAsString("ClubId");
             goal.Type = values.GetAsInteger("Type");
@@ -42,12 +44,10 @@ namespace xGauge.Content
         {
             return dataProvider.CreateGoalTable();
         }
-
+        
         public override ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
         {
-
-            var query = QueryBuilder.buildQuery("GOAL", projection, selection, selectionArgs, sortOrder);
-
+            var query = QueryBuilder.BuildQuery("GOAL", projection, selection, selectionArgs, sortOrder);
             var result = dataProvider.Query(query, selectionArgs);
             if (result != null)
                 return CursorMatrixCreator.Create(result);
@@ -56,7 +56,12 @@ namespace xGauge.Content
 
         public override int Update(Android.Net.Uri uri, ContentValues values, string selection, string[] selectionArgs)
         {
-            return dataProvider.Update(selection, selectionArgs);
+            string clubIdValue = values.GetAsString("ClubId");
+            string memberIdValue = values.GetAsString("MemberId");
+
+            string value = " clubId = '" + clubIdValue + "'" + ", memberId = '" + memberIdValue + "'";
+            var query = QueryBuilder.BuildUpdate("GOAL", value, selection);
+            return dataProvider.Update(query, selectionArgs);
         }
     }
 }

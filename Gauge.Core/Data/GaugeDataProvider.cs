@@ -56,31 +56,5 @@ namespace Gauge.Core.Data
         }
     }
 
-    public class QueryBuilder
-    {
-
-        private const string SELECT_STATEMENT = "SELECT ";
-        private const string FROM_STATEMENT = " FROM ";
-        private const string WHERE_STATEMENT = " WHERE ";
-
-        public static string buildQuery(string table, string[] projection, string selection, string[] selectionArgs, string sortOrder)
-        {
-            StringBuilder builder = new StringBuilder(SELECT_STATEMENT);
-            builder.Append(string.Join(",", projection));
-            builder.Append(FROM_STATEMENT + table);
-            builder.Append(WHERE_STATEMENT);
-
-            var regex = new Regex(Regex.Escape("?"));
-            string pText = selection;
-
-            for (int i = 0; i < selectionArgs.Length; i++)
-            {
-                pText = regex.Replace(pText, selectionArgs[i], 1);
-            }
-
-            builder.Append(pText);
-            return builder.ToString();
-        }
-    }
-
+   
 }
