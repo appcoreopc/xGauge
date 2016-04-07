@@ -28,11 +28,13 @@ namespace xGauge.Fragments
         public class GoalFragment : Android.Support.V4.App.Fragment, Android.Support.V4.App.LoaderManager.ILoaderCallbacks
         {
             private bool _isGoalSetted = false;
+
+
             private GoalSupportFragment parent; 
 
             public GoalFragment()
             {
-                _isGoalSetted = false;
+                _isGoalSetted = true;
             }
             public GoalFragment(bool isGoalSetted)
             {
@@ -52,9 +54,16 @@ namespace xGauge.Fragments
             public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
             {
                 View view;
+
                 if (_isGoalSetted)
                 {
-                    view = inflater.Inflate(Resource.Layout.setgoal_layout, container, false);
+                    view = inflater.Inflate(Resource.Layout.goaldisplay_layout, container, false);
+
+                    var newCustomerFitChart = view.FindViewById<com.frankcalise.widgets.FitChart>(Resource.Id.newCustomerGoalChart);
+                    newCustomerFitChart.MinValue = 0f;
+                    newCustomerFitChart.MaxValue = 100f;
+                    newCustomerFitChart.SetValue(50);
+
                 }
                 else
                 {
