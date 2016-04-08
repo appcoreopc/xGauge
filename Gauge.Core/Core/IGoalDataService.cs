@@ -1,4 +1,6 @@
-﻿using Gauge.Core.ViewModel;
+﻿using Gauge.Core.Core;
+using Gauge.Core.Net;
+using Gauge.Core.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,10 @@ namespace Gauge.Core
 {
     public interface IGoalDataService
     {
-        List<GoalValueModel> GetGoals(string clubId, string clientNo);
+        Task<List<Goal>> GetGoalsAsync(GoalRequest goalRequest);
+
+        Task SetGoalsAsync(List<Goal> goals);
+
+        Task<bool> IsGoalSetAsync(GoalRequest goal);
     }
 }

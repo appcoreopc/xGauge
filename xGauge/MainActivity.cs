@@ -35,7 +35,7 @@ namespace xGauge
 
             tabsAdapter = new TabsAdapter(this, tabHost, viewPager);
 
-            tabsAdapter.AddTab(tabHost.NewTabSpec("Goal").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.target)), Java.Lang.Class.FromType(typeof(GoalSupportFragment.GoalFragment)), null);
+            tabsAdapter.AddTab(tabHost.NewTabSpec("Goal").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.target)), Java.Lang.Class.FromType(typeof(GoalFragment)), null);
             tabsAdapter.AddTab(tabHost.NewTabSpec("Activities").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.activities)), Java.Lang.Class.FromType(typeof(ActivitiesFragment)), null);
             tabsAdapter.AddTab(tabHost.NewTabSpec("Contacts").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.contacts)), Java.Lang.Class.FromType(typeof(ContactsFragment)), null);
             tabsAdapter.AddTab(tabHost.NewTabSpec("Report").SetIndicator(string.Empty, Resources.GetDrawable(Resource.Drawable.report)), Java.Lang.Class.FromType(typeof(ReportsFragment)), null);

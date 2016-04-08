@@ -14,7 +14,7 @@
             android:padding="5dip">
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="140dp"
+                android:layout_width="150dp"
                 android:layout_height="120dp">
                 <com.frankcalise.widgets.FitChart
                     android:layout_width="80dp"
@@ -25,7 +25,7 @@
                     android:layout_marginRight="20dp" />
                 <TextView
                     android:id="@+id/newCustomerFitChartTitle"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0.0dp"
                     android:text="New Customer"
@@ -34,7 +34,7 @@
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="140dp"
+                android:layout_width="150dp"
                 android:layout_height="120dp">
                 <com.frankcalise.widgets.FitChart
                     android:layout_width="80dp"
@@ -58,7 +58,7 @@
             android:padding="5dip">
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="140dp"
+                android:layout_width="150dp"
                 android:layout_height="110dp">
                 <com.frankcalise.widgets.FitChart
                     android:layout_width="80dp"
@@ -78,7 +78,7 @@
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="140dp"
+                android:layout_width="150dp"
                 android:layout_height="110dp">
                 <com.frankcalise.widgets.FitChart
                     android:layout_width="80dp"

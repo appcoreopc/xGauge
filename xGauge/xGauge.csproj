@@ -121,6 +121,7 @@
     <Compile Include="Util\ActivityTypeList.cs" />
     <Compile Include="Util\ContactUtil.cs" />
     <Compile Include="Util\CursorMatrixCreator.cs" />
+    <Compile Include="Util\FitChartUtil.cs" />
     <Compile Include="Util\PermissionHandler.cs" />
     <Compile Include="Util\PhoneUtil.cs" />
     <Compile Include="Util\SimpleMessage.cs" />
@@ -131,7 +132,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\goalsettings_layout.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\goaldisplay_layout.axml">
       <SubType>AndroidResource</SubType>

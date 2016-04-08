@@ -1,16 +1,11 @@
 ﻿using Gauge.Core.ViewModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 
-
 namespace Gauge.Core.Net
 {
-
     public class GaugeRestConfig
     {
         public const string baseUrl = "http://10.7.62.199:5000";
@@ -22,28 +17,88 @@ namespace Gauge.Core.Net
 
         public string MemberId { get; set; }
     }
-    
-    public class GoalRestService
+
+    public class GoalRestService : IGoalDataService
     {
         private const string GoalPath = "/Goal";
-        public static async Task GetGoalsAsync(string clubId, string memberId)
-        {                        
-            var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/" + clubId + "/" + memberId).GetJsonAsync();
+
+        public async Task<List<Goal>> GetGoalsAsync(GoalRequest goalRequest)
+        {
+            List<Goal> data = null;
+
+            var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/" +
+                goalRequest.ClubId + "/" +
+                goalRequest.MemberId).GetJsonAsync();
 
             if (result.IsCompleted)
             {
-                var a = result.Result;
+                data = result.Result as List<Goal>;
             }
+
+            return data;
         }
-        
-        public static async Task SetGoalsAsync(List<Goal> goals)
-        {            
+
+        public async Task<bool> IsGoalSetAsync(GoalRequest goal)
+        {
+            bool isGoalSet = false;
+            var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/"
+                + goal.ClubId + "/" + goal.MemberId).GetJsonAsync();
+
+            if (result.IsCompleted)
+            {
+                isGoalSet = result.Status;
+            }
+            return isGoalSet;
+        }
+
+        public async Task SetGoalsAsync(List<Goal> goals)
+        {
             var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath).GetJsonAsync();
-
             if (result.IsCompleted)
             {
                 var a = result.Result;
             }
         }
+
+        //public async Task<List<Goal>> IGoalDataService.GetGoalsAsync(GoalRequest goalRequest)
+        //{
+        //    List<Goal> data = null;
+
+        //    var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/" +
+        //        goalRequest.ClubId + "/" +
+        //        goalRequest.MemberId).GetJsonAsync();
+
+        //    if (result.IsCompleted)
+        //    {
+        //        data = result.Result as List<Goal>;
+        //    }
+
+        //    return data;
+        //}
+
+        //public async Task<bool> IsGoalSetAsync(GoalRequest goalRequest)
+        //{
+        //    bool isGoalSet = false;
+
+        //    var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath + "/" 
+        //        + goalRequest.ClubId + "/" + goalRequest.MemberId).GetJsonAsync();
+
+        //    if (result.IsCompleted)
+        //    {
+        //        isGoalSet = result.Status;
+        //    }
+        //    return isGoalSet;
+        //}
+
+
+        //public async Task SetGoalsAsync(List<Goal> goals)
+        //{            
+        //    var result = await GaugeRestConfig.baseUrl.AppendPathSegment(GoalPath).GetJsonAsync();
+
+        //    if (result.IsCompleted)
+        //    {
+        //        var a = result.Result;
+        //    }
+        //}
     }
 }

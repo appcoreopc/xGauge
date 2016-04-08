@@ -9,11 +9,20 @@ namespace xGauge.Content
     [ContentProvider(new string[] { GaugeAuthorities.GoalContentProviderAuthorities })]
     public class GoalContentProvider : ContentProvider
     {
-        public static Android.Net.Uri CONTENT_URI = Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-        private GoalDataProvider dataProvider = new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
+        public static Android.Net.Uri CONTENT_URI = 
+            Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+
+        private GoalDataProvider dataProvider = 
+            new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
+
         private const string TABLENAME = "GOAL";
 
         public static string[] Projections = { "Id", "MemberId", "ClubId", "Type", "GoalValue" };
+        
+        public GoalDataProvider CreateDataProviderInstance()
+        {
+            return new GoalDataProvider(GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
+        }
         
         public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
         {
@@ -29,8 +38,7 @@ namespace xGauge.Content
         public override Android.Net.Uri Insert(Android.Net.Uri uri, ContentValues values)
         {
             Goal goal = new Goal();
-            //goal.Id = values.GetAsInteger("Id");
-
+            
             goal.MemberId = values.GetAsString("MemberId");
             goal.ClubId = values.GetAsString("ClubId");
             goal.Type = values.GetAsInteger("Type");

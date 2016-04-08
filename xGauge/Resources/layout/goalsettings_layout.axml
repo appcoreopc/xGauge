@@ -8,19 +8,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        customNS:Title="New Contact" />
+         />
     <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
         android:id="@+id/clubVisit"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        customNS:Title="Club Visit" />
+         />
     <xGauge.Controls.GoalSetter xmlns:customNS="http://schemas.android.com/apk/res/xGauge.xGauge"
         android:id="@+id/eventAttended"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        customNS:Title="Events" />
+         />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

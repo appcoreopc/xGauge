@@ -1,162 +1,136 @@
 using Android.OS;
 using Android.Views;
-using Android.Util;
-using Android.Support.V4.App;
-using xGauge.Content;
 using Android.Widget;
-using Android.Database;
-using Gauge.Core.Net;
-using Android.Content;
+using xGauge.Util;
 
 namespace xGauge.Fragments
 {
-    public class GoalSupportFragment : FragmentActivity
+    public class GoalFragment : Android.Support.V4.App.Fragment, Android.Support.V4.App.LoaderManager.ILoaderCallbacks
     {
-        protected override void OnCreate(Bundle bundle)
+        private bool _isGoalSetted = false;
+        Button saveBtn;
+        Button cancelBtn;
+        
+        public GoalFragment()
         {
-            base.OnCreate(bundle);
-
-            var fm = SupportFragmentManager;
-
-            if (fm.FindFragmentById(Android.Resource.Id.Content) == null)
-            {
-                var list = new GoalFragment(this);
-                fm.BeginTransaction().Add(Android.Resource.Id.Content, list).Commit();
-            }
+            _isGoalSetted = true;
+        }
+        public GoalFragment(bool isGoalSetted)
+        {
+            _isGoalSetted = isGoalSetted;
         }
         
-        public class GoalFragment : Android.Support.V4.App.Fragment, Android.Support.V4.App.LoaderManager.ILoaderCallbacks
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            private bool _isGoalSetted = false;
+            View view = CreateView(inflater, container);
+            //view.Wait();
+            return view;
+        }
+        
+        private View CreateView(LayoutInflater inflater, ViewGroup container)
+        {
+            View view;
 
+            //var service = new GoalService(false, GaugeAndroidDataPlatform.GetDataPath(), GaugeAndroidDataPlatform.GetPlatform());
+            //_isGoalSetted = await service.IsGoalSetAsync(new GoalRequest() { ClubId = "test", MemberId = "memberid" });
 
-            private GoalSupportFragment parent; 
-
-            public GoalFragment()
+            if (_isGoalSetted)
             {
-                _isGoalSetted = true;
+                view = inflater.Inflate(Resource.Layout.goaldisplay_layout, container, false);
+
+                var newCustomerFitChart = view.FindViewById<com.frankcalise.widgets.FitChart>(Resource.Id.newCustomerGoalChart);
+                if (newCustomerFitChart != null)
+                    newCustomerFitChart.ConfigureMinMax(50);
             }
-            public GoalFragment(bool isGoalSetted)
+            else
             {
-                _isGoalSetted = isGoalSetted;
-            }
+                view = inflater.Inflate(Resource.Layout.goalsettings_layout, container, false);
+                saveBtn = view.FindViewById<Button>(Resource.Id.btnSaveGoal);
+                cancelBtn = view.FindViewById<Button>(Resource.Id.btnCancelGoal);
 
-            public GoalFragment(GoalSupportFragment parent)
-            {
-                this.parent = parent;
-                _isGoalSetted = false;
-            }
-
-
-            Button saveBtn;
-            Button cancelBtn;
-
-            public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-            {
-                View view;
-
-                if (_isGoalSetted)
+                if (saveBtn != null)
                 {
-                    view = inflater.Inflate(Resource.Layout.goaldisplay_layout, container, false);
-
-                    var newCustomerFitChart = view.FindViewById<com.frankcalise.widgets.FitChart>(Resource.Id.newCustomerGoalChart);
-                    newCustomerFitChart.MinValue = 0f;
-                    newCustomerFitChart.MaxValue = 100f;
-                    newCustomerFitChart.SetValue(50);
-
+                    saveBtn.Click += SaveBtn_Click;
                 }
-                else
+
+                if (cancelBtn != null)
                 {
-                    view = inflater.Inflate(Resource.Layout.goalsettings_layout, container, false);
-                    saveBtn = view.FindViewById<Button>(Resource.Id.btnSaveGoal);
-                    cancelBtn = view.FindViewById<Button>(Resource.Id.btnCancelGoal);
-
-                    if (saveBtn != null)
-                    {
-                        saveBtn.Click += SaveBtn_Click;
-                    }
-
-                    if (cancelBtn != null)
-                    {
-                        cancelBtn.Click += CancelBtn_Click;
-                    }
+                    cancelBtn.Click += CancelBtn_Click;
                 }
-                                
-                return view;
             }
+            return view;
+        }
 
-            private void CancelBtn_Click(object sender, System.EventArgs e)
+
+        private void CancelBtn_Click(object sender, System.EventArgs e)
+        {
+        }
+
+        private void SaveBtn_Click(object sender, System.EventArgs e)
+        {
+            #region Code Commented
+
+            //string selection = "ClubId = '?' AND MemberId = '?'" ;
+            //string[] selectionArg = { "0", "CN640521" };
+
+            //Android.Net.Uri CONTENT_URI =
+            //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+            //Activity.ContentResolver.Query(CONTENT_URI, GoalContentProvider.Projections, selection, selectionArg, null);
+
+            //Android.Net.Uri CONTENT_URI =
+            //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+
+            //string selection = "ClubId = '?' AND MemberId = '?'";
+            //string[] selectionArg = { "0", "CN640521" };
+
+            //ContentValues content = new ContentValues();
+            //content.Put("ClubId", "NC999");
+            //content.Put("MemberId", "CN640521");
+
+            //Activity.ContentResolver.Update(CONTENT_URI, content, selection, selectionArg);
+
+
+            //Android.Net.Uri CONTENT_URI =
+            //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+
+            //string selection = "ClubId = '?'";
+            //string[] selectionArg = { "999NC"};
+
+            //Activity.ContentResolver.Delete(CONTENT_URI, selection, selectionArg); 
+            #endregion
+
+            //Android.Net.Uri CONTENT_URI =
+            //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
+            //ContentValues values = new ContentValues();
+            //values.Put("MemberId", "12345");
+            //values.Put("ClubId", "NC111");
+            //values.Put("MemberId", "12345");
+            //values.Put("Type", 1234);
+            //values.Put("GoalValue", 99);
+            //Activity.ContentResolver.Insert(CONTENT_URI, values);
+        }
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+        }
+
+        public Android.Support.V4.Content.Loader OnCreateLoader(int id, Bundle args)
+        {
+            return null;
+            //return new CursorLoader(this.Context, GaugeAuthorities.GOAL_CONTENT_URI, null, null, null, null);
+        }
+
+        public void OnLoaderReset(Android.Support.V4.Content.Loader loader)
+        {
+
+        }
+
+        public void OnLoadFinished(Android.Support.V4.Content.Loader loader, Java.Lang.Object data)
+        {
+            if (loader != null && loader.Id == 0)
             {
-            }
 
-            private void SaveBtn_Click(object sender, System.EventArgs e)
-            {
-                //string selection = "ClubId = '?' AND MemberId = '?'" ;
-                //string[] selectionArg = { "0", "CN640521" };
-
-                //Android.Net.Uri CONTENT_URI =
-                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-                //Activity.ContentResolver.Query(CONTENT_URI, GoalContentProvider.Projections, selection, selectionArg, null);
-
-
-
-                //Android.Net.Uri CONTENT_URI =
-                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-
-                //string selection = "ClubId = '?' AND MemberId = '?'";
-                //string[] selectionArg = { "0", "CN640521" };
-
-                //ContentValues content = new ContentValues();
-                //content.Put("ClubId", "NC999");
-                //content.Put("MemberId", "CN640521");
-
-                //Activity.ContentResolver.Update(CONTENT_URI, content, selection, selectionArg);
-
-
-                //Android.Net.Uri CONTENT_URI =
-                //    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-
-                //string selection = "ClubId = '?'";
-                //string[] selectionArg = { "999NC"};
-
-                //Activity.ContentResolver.Delete(CONTENT_URI, selection, selectionArg);
-                
-                Android.Net.Uri CONTENT_URI =
-                    Android.Net.Uri.Parse(GaugeAuthorities.Content + GaugeAuthorities.GoalContentProviderAuthorities);
-                
-                ContentValues values = new ContentValues();
-                values.Put("MemberId", "12345");
-                values.Put("ClubId", "NC111");
-                values.Put("MemberId", "12345");
-                values.Put("Type", 1234);
-                values.Put("GoalValue", 99);
-                
-                Activity.ContentResolver.Insert(CONTENT_URI, values);
-                
-            }
-
-            public override void OnCreate(Bundle savedInstanceState)
-            {
-                    base.OnCreate(savedInstanceState);
-            }
-
-            public Android.Support.V4.Content.Loader OnCreateLoader(int id, Bundle args)
-            {
-                return null;
-                //return new CursorLoader(this.Context, GaugeAuthorities.GOAL_CONTENT_URI, null, null, null, null);
-            }
-
-            public void OnLoaderReset(Android.Support.V4.Content.Loader loader)
-            {
-
-            }
-
-            public void OnLoadFinished(Android.Support.V4.Content.Loader loader, Java.Lang.Object data)
-            {
-                if (loader != null && loader.Id == 0)
-                {
-
-                }
             }
         }
     }
